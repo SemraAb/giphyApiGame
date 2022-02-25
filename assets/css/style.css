@@ -1,0 +1,26 @@
+.bg-primary{
+    background-color:rgb(47, 59, 170) !important;
+    margin:20px;
+    color: white;
+}
+.bg-primary:hover{
+    color: white;
+}
+.giphs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.divGiph{
+    margin: 2rem;
+}
+.searchInput input{
+    width: 87%;
+    height: 5rem;
+    font-size: 2rem;
+}
+
+.searchText{
+    font-size: 4.5rem;
+    justify-content: space-around;
+}
