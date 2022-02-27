@@ -7,14 +7,14 @@ const giph = function () {
   )
     .then((result) => result.json())
     .then((netice) => {
-      $(".giphs rows").remove();
+      $(".giphs img").remove();
       for (let i = 0; i <= 10; i++) {
-        var giphy = netice.data[i].images.original.url;
-        var images = netice.data[i].images["480w_still"].url;
-        var width = netice.data[i].images["480w_still"].width;
-        var height = netice.data[i].images["480w_still"].height;
-        var newDiv = $("<div class='divGiph'>");
-        var newImg = $("<img>");
+        let giphy = netice.data[i].images.original.url;
+        let images = netice.data[i].images["480w_still"].url;
+        let width = netice.data[i].images["480w_still"].width;
+        let height = netice.data[i].images["480w_still"].height;
+        let newDiv = $("<div class='divGiph'>");
+        let newImg = $("<img>");
         newImg.attr("src", images);
         newImg.css({ width: width, height: height });
         newDiv.append(newImg);
@@ -22,10 +22,10 @@ const giph = function () {
         let temp = true;
         newImg.on("click", function () {
           if (temp) {
-            $(this).attr("src", images);
+            $(this).attr("src", netice.data[i].images.original.url);
             temp = false;
           } else {
-            $(this).attr("src", giphy);
+            $(this).attr("src", images);
             temp = true;
           }
         });
@@ -42,13 +42,13 @@ $(".search").on("click", function () {
   img.val("");
 });
 
-let temp = true;
-$(newImg).on("click", function () {
-  if (temp) {
+let temp2 = true;
+$("newImg").on("click", function () {
+  if (temp2) {
     $(this).attr("src", images);
-    temp = false;
+    temp2 = false;
   } else {
-    $(this).attr("src", giphy);
-    temp = true;
+    $(this).attr("src", mp);
+    temp2 = true;
   }
 });
